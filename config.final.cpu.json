@@ -1,0 +1,23 @@
+{
+  "device": "cpu",
+  "text_detection_model_name": "PP-OCRv5_server_det",
+  "text_recognition_model_name": "eslav_PP-OCRv5_mobile_rec",
+  "text_recognition_model_dir": "models/metal_rec_expand_20261117/inference",
+  "views": [
+    {
+      "name": "original",
+      "preprocess_mode": "original"
+    },
+    {
+      "name": "baseline_replay"
+    },
+    {
+      "name": "loose_refine",
+      "preprocess_mode": "original",
+      "orientation_mode": "heat",
+      "refine_crops": true,
+      "text_det_box_thresh": 0.45
+    }
+  ],
+  "text_detection_model_dir": "models/PP-OCRv5_server_det"
+}

@@ -1,0 +1,18 @@
+{
+  "device": "cpu",
+  "enable_mkldnn": false,
+  "lang": "ru",
+  "ocr_version": "PP-OCRv5",
+  "text_recognition_model_dir": null,
+  "text_recognition_model_name": null,
+  "text_detection_model_dir": null,
+  "text_detection_model_name": null,
+  "rotations": [0, 90, 180, 270],
+  "min_score": 0.3,
+  "ok_score": 0.8,
+  "det_limit_side_len": 1280,
+  "clahe_clip": 3.0,
+  "date_corner_fraction": 0.25,
+  "mask_zone": [0.0, 0.0, 0.1, 0.14],
+  "seed": 42
+}
