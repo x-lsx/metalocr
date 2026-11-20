@@ -1,4 +1,3 @@
-"""Select OCR evidence across image views without a vocabulary of known heats."""
 import copy
 import math
 

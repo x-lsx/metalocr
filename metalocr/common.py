@@ -22,7 +22,6 @@ def normalize(text):
 
 
 def heat_number(text):
-    # No global Latin/Cyrillic substitutions: these may be meaningful in markings.
     match = re.search(r'\b(?:19|20)\d{2}[-–][A-Za-zА-Яа-яЁё0-9]+\b', normalize(text))
     return match.group().replace('–', '-') if match else ''
 

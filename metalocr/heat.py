@@ -1,4 +1,3 @@
-"""Extract visible heat identifiers without looking at filenames or registries."""
 import re
 
 # These are marking formats, not a vocabulary of known heats.

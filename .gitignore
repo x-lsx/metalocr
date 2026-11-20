@@ -33,3 +33,19 @@
 !/models/metal_rec_expand_20261117/inference/inference.json
 !/models/metal_rec_expand_20261117/inference/inference.pdiparams
 !/models/metal_rec_expand_20261117/inference/inference.yml
+
+# Upload interface and sheet-number extraction.
+!/metalocr/sheet.py
+!/metalocr/full_pipeline.py
+!/metalocr/output.py
+!/metalocr/filename.py
+!/metalocr/web_server.py
+!/web/
+/web/*
+!/web/index.html
+!/web/style.css
+!/web/app.js
+!/tests/
+/tests/*
+!/tests/test_sheet.py
+!/tests/test_app.py

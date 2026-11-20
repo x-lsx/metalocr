@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>METAL — Проверка маркировки</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header class="header"><a class="brand" href="/" aria-label="METAL OCR"><span class="brand-mark">M</span><strong>METAL<span> / OCR</span></strong></a></header>
+<main>
+  <div class="page-title"><div><div class="eyebrow">КОНТРОЛЬ МАРКИРОВКИ</div><h1>От фотографии к номеру листа</h1><p>Загрузите снимок, проверьте текстовые области и сравните результат с именем файла.</p></div></div>
+  <div class="workspace">
+    <aside class="panel upload-panel">
+      <div class="section-title"><span class="step">01</span><h2>Фотография</h2></div>
+      <label id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Выбрать фотографию">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="5" y="7" width="30" height="26" rx="6" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="16" r="3" stroke="currentColor" stroke-width="1.5"/><path d="m7 29 9-8 6 5 5-5 7 7" stroke="currentColor" stroke-width="1.5"/></svg>
+        <strong>Перетащите фото сюда</strong><span>или нажмите, чтобы выбрать</span><small>JPG / PNG · до 40 МБ</small>
+        <input id="file" type="file" accept="image/jpeg,image/png,.jpg,.jpeg,.png" class="sr-only">
+      </label>
+      <div id="file-meta" class="file-meta" hidden><span class="file-icon">IMG</span><div><strong id="file-name"></strong><span id="file-size"></span></div></div>
+      <button id="recognize" class="primary" disabled><span id="button-label">Распознать маркировку</span><span id="spinner" class="spinner" hidden></span><span id="button-arrow" aria-hidden="true">↗</span></button>
+      <p class="upload-note">Фотография обрабатывается на этом компьютере. Первый запуск включает загрузку моделей в память.</p>
+      <div class="divider"></div><div class="section-title compact"><span class="step">i</span><h2>Как читать результат</h2></div>
+      <ol class="help-list"><li>Рамки показывают найденные строки.</li><li>Вырезки выровнены для чтения текста.</li><li>Плавка и лист извлекаются из OCR.</li></ol>
+      <div class="hint"><strong>Имя файла — только подсказка</strong><p>Сравнение не меняет ответ модели. Если номера не указаны в имени, проверка будет недоступна.</p></div>
+    </aside>
+    <section class="panel image-panel">
+      <div class="section-title image-title"><div><span class="step">02</span><h2>Изображение и области</h2></div><label class="toggle"><input id="show-boxes" type="checkbox" checked> Рамки OCR</label></div>
+      <div id="image-stage" class="image-stage"><div id="image-empty" class="image-empty"><span class="crosshair">⌗</span><h3>Здесь появится ваш снимок</h3><p>Выберите фотографию слева,<br>чтобы начать проверку маркировки.</p></div><div id="image-wrap" class="image-wrap" hidden><img id="photo" alt="Загруженная фотография маркировки"><svg id="overlay" xmlns="http://www.w3.org/2000/svg" aria-label="Найденные текстовые области"></svg></div></div>
+      <div class="image-footer"><span id="image-info">Изображение ещё не выбрано</span><span id="rotation-info"></span></div>
+      <div class="crop-heading"><h2>Вырезки текста <span id="crop-count" class="count">0</span></h2><span>Нажмите на область для выделения</span></div>
+      <div id="crop-empty" class="crop-empty">После распознавания здесь появятся выровненные строки и прочитанный текст.</div><div id="crops" class="crop-grid"></div>
+    </section>
+    <aside class="panel result-panel">
+      <div class="section-title"><span class="step">03</span><h2>Результат</h2><span id="result-status" class="status neutral">Ожидание</span></div>
+      <div class="value-card"><span>Номер плавки</span><strong id="heat-value">—</strong><small id="heat-status">После распознавания</small></div>
+      <div class="value-card sheet-card"><span>Номер листа</span><strong id="sheet-value">—</strong><small id="sheet-status">После распознавания</small></div>
+      <div class="secondary-values"><div><span>Год плавки</span><strong id="year-value">—</strong></div><div><span>Обработка</span><strong id="time-value">—</strong></div></div>
+      <div class="divider"></div><h2 class="comparison-title">Сравнение с именем</h2><p class="comparison-note">OCR и номера из названия загруженного файла.</p>
+      <div id="comparison" class="comparison"><div class="comparison-empty">Выберите фото и запустите распознавание.</div></div>
+      <details class="transcript"><summary>Полный текст OCR</summary><pre id="full-text">Результат ещё не получен.</pre></details>
+      <a id="download-csv" class="download" hidden download>↓ Скачать CSV <span>5 колонок</span></a>
+      <a id="download-json" class="json-link" hidden download>Подробный результат JSON ↗</a>
+    </aside>
+  </div>
+  <div id="message" class="message" role="status" aria-live="polite" hidden></div>
+  
+</main><script src="/app.js"></script></body></html>
